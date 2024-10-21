@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/healthy_dinner_recipes"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/gray_box"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#B0B0B0" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:paddingTop="50dp"
+        android:text="Welcome to our meal app!"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <View
+        android:id="@+id/button_gray_box"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="150dp"
+        android:background="#B0B0B0" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="#B0B0B0"
+        android:text="@string/start_now" 
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        />
+
+</FrameLayout>
