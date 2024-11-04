@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    protected ArrayList<Dish> dishes = new ArrayList<>();
+    public static ArrayList<Dish> dishes = new ArrayList<>();
 
 
     @Override

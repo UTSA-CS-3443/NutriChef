@@ -1,5 +1,7 @@
 package com.example.nutrichef;
 
+import static com.example.nutrichef.MainActivity.dishes;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,7 +64,7 @@ public class EntreeActivity extends AppCompatActivity {
     }
     public static Dish getDishByName(String name) {
         for ( Dish dish  : dishes) {
-            if (dish.getName().equals(name) && (dish.getMealType().equals("entree"))) {
+            if (dish.getName().equals(name)) {
                 return dish;
             }
         }
