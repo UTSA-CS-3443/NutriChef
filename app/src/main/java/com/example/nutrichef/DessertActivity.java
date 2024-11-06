@@ -1,57 +1,52 @@
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
-import android.app.ActivityOptions;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntreeActivity extends AppCompatActivity {
+public class DessertActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.entree);
+        setContentView(R.layout.dessert);
         LinearLayout dishContainer = findViewById(R.id.buttonContainer);
-        ArrayList<Dish> entreeDishes = getEntreeDishes(dishes);
-        for (Dish dish : entreeDishes) {
+        ArrayList<Dish> dessertDishes = getDessertDishes(dishes);
+        for (Dish dish : dessertDishes) {
             addDishButton(dish, dishContainer);
         }
 
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
-            Intent intent = new Intent(EntreeActivity.this, AddActivity.class);
-            intent.putExtra("MealType", "entree");
+            Intent intent = new Intent(DessertActivity.this, AddActivity.class);
+            intent.putExtra("MealType", "dessert");
             startActivity(intent);
         });
 
-        Button appetizerButton = findViewById(R.id.appetizerButton);
-        appetizerButton.setOnClickListener(v -> startActivity(new Intent(EntreeActivity.this, AppetizerActivity.class)));
+        Button entreeButton = findViewById(R.id.entreeButton);
+        entreeButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, EntreeActivity.class)));
 
-        Button dessertButton = findViewById(R.id.dessertButton);
-        dessertButton.setOnClickListener(v -> startActivity(new Intent(EntreeActivity.this, DessertActivity.class)));
+        Button appetizerButton = findViewById(R.id.appetizerButton);
+        appetizerButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, AppetizerActivity.class)));
     }
 
-    private ArrayList<Dish> getEntreeDishes(List<Dish> allDishes) {
-        ArrayList<Dish> entreeDishes = new ArrayList<>();
+    private ArrayList<Dish> getDessertDishes(List<Dish> allDishes) {
+        ArrayList<Dish> dessertDishes = new ArrayList<>();
         for (Dish dish : allDishes) {
-            if (dish.getMealType().equals("entree")) {
-                entreeDishes.add(dish);
+            if (dish.getMealType().equals("dessert")) {
+                dessertDishes.add(dish);
             }
         }
-        return entreeDishes;
+        return dessertDishes;
     }
 
     private void addDishButton(Dish dish, LinearLayout container) {
@@ -63,9 +58,9 @@ public class EntreeActivity extends AppCompatActivity {
         dishInfo.setTextSize(18);
 
         dishInfo.setOnClickListener(v -> {
-            Intent intent = new Intent(EntreeActivity.this, DishActivity.class);
+            Intent intent = new Intent(DessertActivity.this, DishActivity.class);
             intent.putExtra("DishName", dish.getName());
-            intent.putExtra("MealType", "entree");
+            intent.putExtra("MealType", "dessert");
             startActivity(intent);
         });
 
