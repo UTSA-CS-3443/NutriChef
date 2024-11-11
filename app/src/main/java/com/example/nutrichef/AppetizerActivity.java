@@ -48,9 +48,6 @@ public class AppetizerActivity extends AppCompatActivity {
     private void loadAppetizerDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
-
         // Filter and display appetizer dishes
         ArrayList<Dish> appetizerDishes = getAppetizerDishes(dishes);
         for (Dish dish : appetizerDishes) {

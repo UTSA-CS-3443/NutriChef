@@ -46,9 +46,6 @@ public class DessertActivity extends AppCompatActivity {
     private void loadDessertDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
-
         // Filter and display dessert dishes
         ArrayList<Dish> dessertDishes = getDessertDishes(dishes);
         for (Dish dish : dessertDishes) {

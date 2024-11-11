@@ -43,8 +43,6 @@ public class EntreeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
         loadEntreeDishes();
     }
 
