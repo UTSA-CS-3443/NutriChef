@@ -2,36 +2,27 @@ package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AppetizerActivity extends AppCompatActivity {
 
+    private LinearLayout dishView;
+    DishContainer dishContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appetizer);
-        LinearLayout dishContainer = findViewById(R.id.buttonContainer);
-        ArrayList<Dish> appetizerDishes = getAppetizerDishes(dishes);
-        for (Dish dish : appetizerDishes) {
-            addDishButton(dish, dishContainer);
-        }
+
+        dishView = findViewById(R.id.buttonContainer);
 
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
@@ -45,12 +36,32 @@ public class AppetizerActivity extends AppCompatActivity {
 
         Button dessertButton = findViewById(R.id.dessertButton);
         dessertButton.setOnClickListener(v -> startActivity(new Intent(AppetizerActivity.this, DessertActivity.class)));
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadAppetizerDishes();
+    }
+
+    private void loadAppetizerDishes() {
+        // Clear any existing views to prevent duplicates
+        dishView.removeAllViews();
+        dishContainer = new DishContainer(this);
+        dishContainer.loadDishes();
+
+        // Filter and display appetizer dishes
+        ArrayList<Dish> appetizerDishes = getAppetizerDishes(dishes);
+        for (Dish dish : appetizerDishes) {
+            addDishButton(dish, dishView);
+        }
     }
 
     private ArrayList<Dish> getAppetizerDishes(List<Dish> allDishes) {
         ArrayList<Dish> appetizerDishes = new ArrayList<>();
         for (Dish dish : allDishes) {
-            if (dish.getMealType().equals("appetizer")) {
+            if ("appetizer".equals(dish.getDishType())) {
                 appetizerDishes.add(dish);
             }
         }
@@ -62,12 +73,12 @@ public class AppetizerActivity extends AppCompatActivity {
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);
 
         Button dishInfo = new Button(this);
-        dishInfo.setText(dish.getName());
+        dishInfo.setText(dish.getDishName());
         dishInfo.setTextSize(18);
 
         dishInfo.setOnClickListener(v -> {
             Intent intent = new Intent(AppetizerActivity.this, DishActivity.class);
-            intent.putExtra("DishName", dish.getName());
+            intent.putExtra("DishName", dish.getDishName());
             intent.putExtra("MealType", "appetizer");
             startActivity(intent);
         });
@@ -79,11 +90,10 @@ public class AppetizerActivity extends AppCompatActivity {
 
     public static Dish getDishByName(String name) {
         for (Dish dish : dishes) {
-            if (dish.getName().equals(name)) {
+            if (dish.getDishName().equals(name)) {
                 return dish;
             }
         }
         return null;
     }
 }
-

@@ -1,34 +1,28 @@
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.activity.EdgeToEdge;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class EntreeActivity extends AppCompatActivity {
 
+    private LinearLayout dishView;
+    DishContainer dishContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entree);
-        LinearLayout dishContainer = findViewById(R.id.buttonContainer);
-        ArrayList<Dish> entreeDishes = getEntreeDishes(dishes);
-        for (Dish dish : entreeDishes) {
-            addDishButton(dish, dishContainer);
-        }
+        dishView = findViewById(R.id.buttonContainer);
+
 
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
@@ -42,15 +36,41 @@ public class EntreeActivity extends AppCompatActivity {
 
         Button dessertButton = findViewById(R.id.dessertButton);
         dessertButton.setOnClickListener(v -> startActivity(new Intent(EntreeActivity.this, DessertActivity.class)));
+
+
     }
 
-    private ArrayList<Dish> getEntreeDishes(List<Dish> allDishes) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        dishContainer = new DishContainer(this);
+        dishContainer.loadDishes();
+        loadEntreeDishes();
+    }
+
+    private void loadEntreeDishes() {
+        // Clear the container to prevent duplicate entries
+        dishView.removeAllViews();
+
+        // Filter and display entree dishes
+        ArrayList<Dish> entreeDishes = getEntreeDishes();
+        for (Dish dish : entreeDishes) {
+            addDishButton(dish, dishView);
+        }
+    }
+
+    private ArrayList<Dish> getEntreeDishes() {
         ArrayList<Dish> entreeDishes = new ArrayList<>();
-        for (Dish dish : allDishes) {
-            if (dish.getMealType().equals("entree")) {
+
+        for (Dish dish : dishes) {
+
+            if ("entree".equals(dish.getDishType())) {
                 entreeDishes.add(dish);
+
+
             }
         }
+
         return entreeDishes;
     }
 
@@ -59,12 +79,12 @@ public class EntreeActivity extends AppCompatActivity {
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);
 
         Button dishInfo = new Button(this);
-        dishInfo.setText(dish.getName());
+        dishInfo.setText(dish.getDishName());
         dishInfo.setTextSize(18);
 
         dishInfo.setOnClickListener(v -> {
             Intent intent = new Intent(EntreeActivity.this, DishActivity.class);
-            intent.putExtra("DishName", dish.getName());
+            intent.putExtra("DishName", dish.getDishName());
             intent.putExtra("MealType", "entree");
             startActivity(intent);
         });
@@ -76,7 +96,7 @@ public class EntreeActivity extends AppCompatActivity {
 
     public static Dish getDishByName(String name) {
         for (Dish dish : dishes) {
-            if (dish.getName().equals(name)) {
+            if (dish.getDishName().equals(name)) {
                 return dish;
             }
         }

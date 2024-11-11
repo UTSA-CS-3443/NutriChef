@@ -20,18 +20,15 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<Dish> dishes = new ArrayList<>();
+    DishContainer dishContainer = new DishContainer(this);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        try {
-            // Load the fleet data from CSV files located in assets
-            dishContainer.loadDishes(this);
-        } catch (IOException e) {
-            throw new RuntimeException("Error loading fleet data.", e);
-        }
+        // Load the fleet data from CSV files located in assets
+        dishContainer.loadDishes();
 
         Button startButton = findViewById(R.id.start_button);
         Button helpButton = findViewById(R.id.helpButton);
@@ -47,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HelpActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+                //startActivity(intent);
             }
         });
     }
