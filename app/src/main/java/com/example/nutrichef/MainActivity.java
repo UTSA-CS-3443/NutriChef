@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
+import com.example.nutrichef.model.DishContainer;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Load the fleet data from CSV files located in assets
+        // Load the dish data from CSV files located in assets
         dishContainer.loadDishes();
 
         Button startButton = findViewById(R.id.start_button);
