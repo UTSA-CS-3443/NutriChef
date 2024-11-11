@@ -1,21 +1,16 @@
-package com.example.nutrichef;
+package com.example.nutrichef.model;
 import static com.example.nutrichef.MainActivity.dishes;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class DishContainer {

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="top|center_horizontal">
+    android:gravity="top|center_horizontal"
+    android:background="#C8C2B9">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,6 +14,7 @@
         android:orientation="horizontal" >
 
         <ImageButton
+            android:id="@+id/backButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="left"
@@ -22,8 +24,8 @@
         </ImageButton>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:id="@+id/defImage"
             android:background="@drawable/ic_launcher_background"
             android:layout_marginLeft="85dp"
@@ -113,7 +115,7 @@
             android:layout_weight="1"
             android:id="@+id/modifyButton"
             android:backgroundTint="@color/black"
-            android:text="modify dish"/>
+            android:text="Modify Dish"/>
 
         <TextView
             android:layout_width="150dp"
@@ -127,6 +129,6 @@
             android:layout_weight="1"
             android:id="@+id/deleteButton"
             android:backgroundTint="@color/black"
-            android:text="delete dish"/>
+            android:text="Delete Dish"/>
     </LinearLayout>
 </LinearLayout>
