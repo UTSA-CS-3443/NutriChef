@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
-import com.example.nutrichef.model.DishActivity;
 
 import java.util.ArrayList;
 
