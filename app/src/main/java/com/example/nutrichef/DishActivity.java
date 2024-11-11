@@ -70,6 +70,7 @@ public class DishActivity extends AppCompatActivity {
 
     }
 
+
     public static Dish getDishByName(String name) {
         if (dishes != null) {
             for (Dish d : dishes) {
