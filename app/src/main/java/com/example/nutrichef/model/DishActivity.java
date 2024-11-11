@@ -1,4 +1,4 @@
-package com.example.nutrichef;
+package com.example.nutrichef.model;
 
 import static com.example.nutrichef.MainActivity.dishes;
 import android.content.Intent;
@@ -6,6 +6,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nutrichef.AppetizerActivity;
+import com.example.nutrichef.DeleteActivity;
+import com.example.nutrichef.DessertActivity;
+import com.example.nutrichef.EntreeActivity;
+import com.example.nutrichef.R;
 
 public class DishActivity extends AppCompatActivity {
 

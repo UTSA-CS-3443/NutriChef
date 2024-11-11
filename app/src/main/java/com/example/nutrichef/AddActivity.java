@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nutrichef.model.Dish;
+
 public class AddActivity extends AppCompatActivity{
     DishContainer dishContainer = new DishContainer(this);
     protected void onCreate(Bundle savedInstanceState) {
