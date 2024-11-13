@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
@@ -75,6 +76,16 @@ public class DishActivity extends AppCompatActivity {
             intent.putExtra("DishName", finalDish.getDishName()); // Use finalDish
             intent.putExtra("MealType", mealType);
             startActivity(intent);
+        });
+
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent = new Intent(DishActivity.this, EntreeActivity.class);
+                startActivity(intent);
+                finish();  // This example finishes the activity
+            }
         });
     }
 
