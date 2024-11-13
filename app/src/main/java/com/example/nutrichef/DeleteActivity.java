@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
-import com.example.nutrichef.model.DishActivity;
+import com.example.nutrichef.model.DishContainer;
 
 public class DeleteActivity extends AppCompatActivity {
 

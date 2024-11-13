@@ -25,7 +25,7 @@
         <activity android:name=".EntreeActivity" />
         <activity android:name=".AppetizerActivity" />
         <activity android:name=".DessertActivity" />
-        <activity android:name=".model.DishActivity" />
+        <activity android:name=".DishActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".DeleteActivity" />
         <activity android:name=".model.HelperActivity"/>

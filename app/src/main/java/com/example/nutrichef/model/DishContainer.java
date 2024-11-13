@@ -1,9 +1,7 @@
-package com.example.nutrichef;
+package com.example.nutrichef.model;
 
 import static com.example.nutrichef.MainActivity.dishes;
 import android.content.Context;
-
-import com.example.nutrichef.model.Dish;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
+import com.example.nutrichef.model.DishContainer;
 
 public class AddActivity extends AppCompatActivity{
     DishContainer dishContainer = new DishContainer(this);
