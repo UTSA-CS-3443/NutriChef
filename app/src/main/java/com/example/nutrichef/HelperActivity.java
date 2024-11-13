@@ -1,12 +1,11 @@
-package com.example.nutrichef.model;
+package com.example.nutrichef;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.nutrichef.R;
 
 
-    public class HelperActivity extends AppCompatActivity {
+public class HelperActivity extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

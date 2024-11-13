@@ -7,7 +7,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
-import com.example.nutrichef.model.HelperActivity;
 
 import java.util.ArrayList;
 
