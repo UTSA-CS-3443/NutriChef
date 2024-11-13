@@ -1,16 +1,15 @@
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
 import com.example.nutrichef.model.DishContainer;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,6 @@ import java.util.List;
 public class AppetizerActivity extends AppCompatActivity {
 
     private LinearLayout dishView;
-    DishContainer dishContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +49,6 @@ public class AppetizerActivity extends AppCompatActivity {
     private void loadAppetizerDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
-
         // Filter and display appetizer dishes
         ArrayList<Dish> appetizerDishes = getAppetizerDishes(dishes);
         for (Dish dish : appetizerDishes) {
@@ -85,7 +80,6 @@ public class AppetizerActivity extends AppCompatActivity {
             intent.putExtra("MealType", "appetizer");
             startActivity(intent);
         });
-
         dishLayout.addView(dishInfo);
         dishLayout.setPadding(0, 0, 0, 100);
         container.addView(dishLayout);

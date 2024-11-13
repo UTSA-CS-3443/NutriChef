@@ -10,6 +10,11 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="Add your dish" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Separate items with commas" />
 
     <TextView
         android:layout_width="wrap_content"

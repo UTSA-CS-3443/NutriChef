@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
@@ -16,14 +15,12 @@ import java.util.ArrayList;
 public class EntreeActivity extends AppCompatActivity {
 
     private LinearLayout dishView;
-    DishContainer dishContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entree);
         dishView = findViewById(R.id.buttonContainer);
-
 
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
@@ -44,8 +41,6 @@ public class EntreeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
         loadEntreeDishes();
     }
 

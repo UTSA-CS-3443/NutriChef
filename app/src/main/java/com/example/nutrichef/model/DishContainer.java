@@ -1,6 +1,5 @@
 package com.example.nutrichef.model;
 import static com.example.nutrichef.MainActivity.dishes;
-
 import android.content.Context;
 
 import java.io.BufferedReader;
@@ -19,9 +18,6 @@ public class DishContainer {
         this.context = context;
 
     }
-
-
-
     //Empties the arrayList and refills it with all existing dish files
     public void loadDishes() {
         File[] files;
@@ -74,8 +70,8 @@ public class DishContainer {
                             continue;
                         }
 
-                        // Detect "Nutrition Info:" section
-                        if (line.equals("Nutrition Info:")) {
+                        // Detect "Nutritional Inforomation:" section
+                        if (line.equals("Nutritional Information:")) {
                             readingIngredients = false;
                             readingInstructions = false;
                             continue;
@@ -87,7 +83,7 @@ public class DishContainer {
                         } else if (readingInstructions) {
                             newDish.setDishInstructions(newDish.getDishInstructions() + line + "\n");
                         } else {
-                            // Remaining lines after "Nutrition Info:" are treated as nutritional info
+                            // Remaining lines after "Nutritional Inforomation:" are treated as nutritional info
                             newDish.setDishNutrients(newDish.getDishNutrients() + line + "\n");
                         }
                     }
@@ -117,13 +113,31 @@ public class DishContainer {
             for(int i = 1; i <= 3; i++){
                 switch(i){
                     case 1:
-                        writer.write("Ingredients: \n" + newDish.getDishIngredients() + "\n");
+                        writer.write("Ingredients: \n");
+                        String[] ingredients = newDish.getDishIngredients().split(",");
+                        for(String s : ingredients){
+                            s = s.trim();
+                            writer.write(s +"\n");
+                        }
+                        writer.write("\n");
                         break;
                     case 2:
-                        writer.write("Instructions: \n" + newDish.getDishInstructions() + "\n");
+                        writer.write("Instructions: \n");
+                        String[] instructions = newDish.getDishInstructions().split(",");
+                        for(String s : instructions){
+                            s = s.trim();
+                            writer.write(s +"\n");
+                        }
+                        writer.write("\n");
                         break;
                     case 3:
-                        writer.write("Nutrition Info: \n" + newDish.getDishNutrients() + "\n");
+                        writer.write("Nutritional Information: \n");
+                        String[] nutrition = newDish.getDishNutrients().split(",");
+                        for(String s : nutrition){
+                            s = s.trim();
+                            writer.write(s +"\n");
+                        }
+                        writer.write("\n");
                         break;
                 }
             }

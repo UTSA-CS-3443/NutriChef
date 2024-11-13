@@ -83,7 +83,7 @@
                 android:gravity="left"
                 android:textSize="20sp"
                 android:paddingTop="20dp"
-                android:text="Nutrition info"/>
+                android:text="Nutritional information"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -124,3 +124,4 @@
             android:text="Delete Dish"/>
     </LinearLayout>
 </LinearLayout>
+

@@ -1,7 +1,6 @@
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -17,8 +16,6 @@ import java.util.List;
 public class DessertActivity extends AppCompatActivity {
 
     private LinearLayout dishView;
-    DishContainer dishContainer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +47,6 @@ public class DessertActivity extends AppCompatActivity {
     private void loadDessertDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
-        dishContainer = new DishContainer(this);
-        dishContainer.loadDishes();
-
         // Filter and display dessert dishes
         ArrayList<Dish> dessertDishes = getDessertDishes(dishes);
         for (Dish dish : dessertDishes) {

@@ -43,10 +43,10 @@
         />
 
     <Button
+        android:id="@+id/helpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#B0B0B0"
-        android:id="@+id/helpButton"
         android:text="?"
         android:textSize="32sp"
         android:layout_gravity="bottom"

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
@@ -22,7 +21,16 @@ public class AddActivity extends AppCompatActivity{
         Button addButton = findViewById(R.id.add);
         addButton.setOnClickListener(v -> {
             Toast.makeText(AddActivity.this, "Dish added!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(AddActivity.this, EntreeActivity.class);
+            Intent intent = new Intent();
+            if (mealType.equals("entree")) {
+            intent = new Intent(AddActivity.this, EntreeActivity.class);
+            }
+            else if (mealType.equals("dessert")) {
+            intent = new Intent(AddActivity.this, DessertActivity.class);
+            }
+            else if (mealType.equals("appetizer")) {
+            intent = new Intent(AddActivity.this, AppetizerActivity.class);
+            }
 
         EditText dishNameInput = findViewById(R.id.userInput1);
         EditText dishIngredientsInput = findViewById(R.id.userInput2);

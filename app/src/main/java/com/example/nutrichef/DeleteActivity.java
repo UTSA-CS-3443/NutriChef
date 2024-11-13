@@ -22,6 +22,7 @@ public class DeleteActivity extends AppCompatActivity {
         // Retrieve dish name passed from the previous activity
         String dishName = getIntent().getStringExtra("DishName");
         Button deleteButton = findViewById(R.id.deleteButton);
+        String mealType = getIntent().getStringExtra("MealType");
 
         deleteButton.setOnClickListener(v -> {
             Dish dish = DishActivity.getDishByName(dishName);
@@ -33,7 +34,16 @@ public class DeleteActivity extends AppCompatActivity {
 
                 // Notify user and navigate back to EntreeActivity
                 Toast.makeText(DeleteActivity.this, "Dish deleted!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DeleteActivity.this, EntreeActivity.class);
+                Intent intent = new Intent();
+                if (mealType.equals("entree")) {
+                    intent = new Intent(DeleteActivity.this, EntreeActivity.class);
+                }
+                else if (mealType.equals("dessert")) {
+                    intent = new Intent(DeleteActivity.this, DessertActivity.class);
+                }
+                else if (mealType.equals("appetizer")) {
+                    intent = new Intent(DeleteActivity.this, AppetizerActivity.class);
+                }
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Clear stack to prevent memory leaks
                 startActivity(intent);
                 finish(); // Close DeleteActivity after deletion

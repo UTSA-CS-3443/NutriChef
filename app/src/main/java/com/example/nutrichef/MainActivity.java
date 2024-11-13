@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Load the fleet data from CSV files located in assets
+        // Load the dish data from CSV files located in assets
         dishContainer.loadDishes();
 
         Button startButton = findViewById(R.id.start_button);
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(MainActivity.this, HelpActivity.class);
-                //startActivity(intent);
+               Intent intent = new Intent(MainActivity.this, HelperActivity.class);
+                startActivity(intent);
             }
         });
     }
