@@ -81,10 +81,24 @@ public class ModifyActivity extends AppCompatActivity {
 
                 // Show a confirmation message and close the activity
                 Toast.makeText(ModifyActivity.this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ModifyActivity.this, DishActivity.class);
-                intent.putExtra("DishName", dish.getDishName());
-                intent.putExtra("MealType", mealType);
-                startActivity(intent);
+                if((dish.getDishType().equals("dessert"))){
+                    Intent intent = new Intent(ModifyActivity.this, DessertActivity.class);
+                    intent.putExtra("DishName", dish.getDishName());
+                    intent.putExtra("MealType", mealType);
+                    startActivity(intent);
+                }
+                if((dish.getDishType().equals("entree"))){
+                    Intent intent = new Intent(ModifyActivity.this, EntreeActivity.class);
+                    intent.putExtra("DishName", dish.getDishName());
+                    intent.putExtra("MealType", mealType);
+                    startActivity(intent);
+                }
+                if((dish.getDishType().equals("appetizer"))){
+                    Intent intent = new Intent(ModifyActivity.this, AppetizerActivity.class);
+                    intent.putExtra("DishName", dish.getDishName());
+                    intent.putExtra("MealType", mealType);
+                    startActivity(intent);
+                }
             }
         });
     }
