@@ -59,10 +59,6 @@ public class DishActivity extends AppCompatActivity {
         int imageResourceId = getDishImageResourceId(dish.getDishType());
         dishImageView.setImageResource(imageResourceId);
 
-        // Functionality for the back button
-        ImageButton backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(v -> finish());
-
         // Creates Intent for the modify button
         Button modifyButton = findViewById(R.id.modifyButton);
         modifyButton.setOnClickListener(v -> {

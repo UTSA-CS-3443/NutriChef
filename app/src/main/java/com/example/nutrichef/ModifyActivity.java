@@ -1,5 +1,6 @@
 package com.example.nutrichef;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +20,9 @@ public class ModifyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modify); // Set the content view to your XML layout
+        setContentView(R.layout.activity_modify);
 
         // Retrieve dishName and mealType from the intent
         String dishName = getIntent().getStringExtra("DishName");
@@ -41,10 +43,6 @@ public class ModifyActivity extends AppCompatActivity {
             finish(); // Close the activity if the dish is not found
             return;
         }
-
-        // back button
-        ImageButton backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(v -> finish());
 
         // Set up the image view
         ImageView dishImageView = findViewById(R.id.defImage);
@@ -83,7 +81,10 @@ public class ModifyActivity extends AppCompatActivity {
 
                 // Show a confirmation message and close the activity
                 Toast.makeText(ModifyActivity.this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
-                finish();
+                Intent intent = new Intent(ModifyActivity.this, DishActivity.class);
+                intent.putExtra("DishName", dish.getDishName());
+                intent.putExtra("MealType", mealType);
+                startActivity(intent);
             }
         });
     }

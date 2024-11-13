@@ -15,15 +15,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="left"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/backbutton" />
-
         <ImageView
             android:id="@+id/defImage"
             android:layout_width="175dp"
@@ -31,7 +22,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/ic_launcher_background"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="95dp"
             android:contentDescription="defImage" />
     </LinearLayout>
 
