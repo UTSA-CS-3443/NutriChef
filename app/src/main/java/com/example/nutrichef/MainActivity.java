@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutrichef.model.Dish;
+import com.example.nutrichef.model.HelperActivity;
 
 import java.util.ArrayList;
 
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(MainActivity.this, HelpActivity.class);
-                //startActivity(intent);
+               Intent intent = new Intent(MainActivity.this, HelperActivity.class);
+                startActivity(intent);
             }
         });
     }
