@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="top|center_horizontal"
+    android:background="#C8C2B9"
+    tools:context=".ModifyActivity">
+
+    <!-- Top section with Back Button and Image -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/backbutton" />
+
+        <ImageView
+            android:id="@+id/defImage"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_marginLeft="65dp"
+            android:contentDescription="defImage" />
+    </LinearLayout>
+
+    <!-- Dish Name as Editable Text -->
+    <EditText
+        android:id="@+id/editDishName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/white"
+        android:background="@color/gray"
+        android:hint="Dish Name"
+        android:gravity="center"
+        android:inputType="text" />
+
+    <!-- Scrollable section for dish details -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Editable Ingredients Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:text="Ingredients" />
+
+            <EditText
+                android:id="@+id/editDishIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:hint="Enter ingredients"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:paddingTop="10dp" />
+
+            <!-- Editable Instructions Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:text="Instructions" />
+
+            <EditText
+                android:id="@+id/editDishInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:hint="Enter instructions"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:paddingTop="10dp" />
+
+            <!-- Editable Nutrition Info Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="20sp"
+                android:paddingTop="20dp"
+                android:text="Nutrition Info" />
+
+            <EditText
+                android:id="@+id/editDishNutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:hint="Enter nutrition info"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:paddingTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom section with only one button -->
+    <Button
+        android:id="@+id/confirmChangesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="Confirm Changes" />
+</LinearLayout>
