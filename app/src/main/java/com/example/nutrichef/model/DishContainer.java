@@ -1,5 +1,4 @@
 package com.example.nutrichef.model;
-
 import static com.example.nutrichef.MainActivity.dishes;
 import android.content.Context;
 
@@ -19,7 +18,6 @@ public class DishContainer {
         this.context = context;
 
     }
-
     //Empties the arrayList and refills it with all existing dish files
     public void loadDishes() {
         File[] files;
