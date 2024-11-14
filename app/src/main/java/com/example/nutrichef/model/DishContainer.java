@@ -18,6 +18,73 @@ public class DishContainer {
         this.context = context;
 
     }
+
+    public void startUp(){
+        Dish appetizer1 = new Dish();
+        appetizer1.setDishName("Mozzarella Sticks");
+        appetizer1.setDishIngredients("Mozzarella Cheese, Breading, Buttermilk");
+        appetizer1.setDishInstructions("Coat cheese in buttermilk, Coat with breading, Fry");
+        appetizer1.setDishNutrients("5g Sodium, 2g Protein");
+        appetizer1.setDishType("appetizer");
+        Dish appetizer2 = new Dish();
+        appetizer2.setDishName("Nachos");
+        appetizer2.setDishIngredients("Tortilla chips, cheese, chicken");
+        appetizer2.setDishInstructions("Coat chips with cheese, Coat chips with chicken");
+        appetizer2.setDishNutrients("2g Sodium, 5g Protein");
+        appetizer2.setDishType("appetizer");
+        Dish appetizer3 = new Dish();
+        appetizer3.setDishName("Fried pickles");
+        appetizer3.setDishIngredients("Pickles, Buttermilk, Breading");
+        appetizer3.setDishInstructions("Dip pickles in buttermilk, Coat with breading, Fry");
+        appetizer3.setDishNutrients("6g Sodium, 1g Protein");
+        appetizer3.setDishType("appetizer");
+        Dish entree1 = new Dish();
+        entree1.setDishName("Steak");
+        entree1.setDishIngredients("Meat, Seasoning, Butter");
+        entree1.setDishInstructions("Season the meat, Cook in a pan while basting with butter, Let rest");
+        entree1.setDishNutrients("10g protein, 2g Sodium");
+        entree1.setDishType("entree");
+        Dish entree2 = new Dish();
+        entree2.setDishName("Cheeseburger");
+        entree2.setDishIngredients("Beef, Cheese, Bread");
+        entree2.setDishInstructions("Cook meat in a patty shape, Place cheese on patty, Place patty on Bun");
+        entree2.setDishNutrients("5g Sodium, 8g Protein");
+        entree2.setDishType("entree");
+        Dish entree3 = new Dish();
+        entree3.setDishName("Ravioli");
+        entree3.setDishIngredients("Flour, Eggs, Cheese");
+        entree3.setDishInstructions("Make dough, Cut dough into proper shape, Place cheese in shapes, Cook");
+        entree3.setDishNutrients("3g Sodium, 5g Protein");
+        entree3.setDishType("entree");
+        Dish dessert1 = new Dish();
+        dessert1.setDishName("Cake");
+        dessert1.setDishIngredients("Flour, Milk, Eggs, Cocoa Powder, Sugar");
+        dessert1.setDishInstructions("Mix wet ingredients in bowl, Combine with Dry, Bake");
+        dessert1.setDishNutrients("6g Sodium, 3g Protein, 6g Sugar");
+        dessert1.setDishType("dessert");
+        Dish dessert2 = new Dish();
+        dessert2.setDishName("Ice Cream");
+        dessert2.setDishIngredients("Heavy Cream, Milk, Sugar");
+        dessert2.setDishInstructions("Combine all ingredients, Freeze");
+        dessert2.setDishNutrients("3g Sodium, 2g Protein, 4g Sugar");
+        dessert2.setDishType("dessert");
+        Dish dessert3 = new Dish();
+        dessert3.setDishName("Cookies");
+        dessert3.setDishIngredients("Flour, Eggs, Butter, Milk, Chocolate Chips");
+        dessert3.setDishInstructions("Combine all wet ingredients in a bowl, Add in Dry and Chocolate chips, Bake");
+        dessert3.setDishNutrients("4g Sodium, 2g Protein, 4g Sugar");
+        dessert3.setDishType("dessert");
+        addDish(appetizer1);
+        addDish(appetizer2);
+        addDish(appetizer3);
+        addDish(entree1);
+        addDish(entree2);
+        addDish(entree3);
+        addDish(dessert1);
+        addDish(dessert2);
+        addDish(dessert3);
+    }
+
     //Empties the arrayList and refills it with all existing dish files
     public void loadDishes() {
         File[] files;

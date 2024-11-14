@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Load the dish data from txt files
-        dishContainer.loadDishes();
+        // Load the dish data from CSV files located in assets
+        dishContainer.startUp();
 
         Button startButton = findViewById(R.id.start_button);
         Button helpButton = findViewById(R.id.helpButton);
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent = new Intent(MainActivity.this, HelperActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(MainActivity.this, HelpActivity.class);
+                //startActivity(intent);
             }
         });
     }
