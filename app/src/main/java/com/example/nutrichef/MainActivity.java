@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Load the dish data from CSV files located in assets
+        // Load the dish data from txt files
         dishContainer.loadDishes();
 
         Button startButton = findViewById(R.id.start_button);
