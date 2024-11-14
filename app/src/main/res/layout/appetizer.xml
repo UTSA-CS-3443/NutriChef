@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:background="@color/white">
 
@@ -13,12 +14,14 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <ImageView
-            android:id="@+id/myImageView"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:contentDescription="Entree picture"
-            android:background="@drawable/healthy_dinner_recipes"/>
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/square_button"
+            app:backgroundTint="@null"
+            android:text="Appetizers"
+            android:textSize="50dp">
+        </Button>
 
         <LinearLayout
             android:id="@+id/buttonContainer"
@@ -31,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+\nadd new dish"
+            android:backgroundTint="@color/black"
             android:id="@+id/addNewDishButton">
         </Button>
 
@@ -55,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/entreeButton"
+                android:backgroundTint="@color/black"
                 android:text="entrees"
                 >
             </Button>
@@ -64,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/dessertButton"
+                android:backgroundTint="@color/black"
                 android:text="desserts">
             </Button>
 
