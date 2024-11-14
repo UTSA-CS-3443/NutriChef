@@ -6,41 +6,33 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="top|center_horizontal"
-    android:background="#C8C2B9">
+    android:background="#C8C2B9" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/backbutton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            >
-        </ImageButton>
-
         <ImageView
             android:layout_width="175dp"
             android:layout_height="175dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="15dp"
             android:id="@+id/defImage"
             android:background="@drawable/ic_launcher_background"
-            android:layout_marginLeft="65dp"
-            android:contentDescription="defImage"/>
+            android:layout_marginLeft="95dp"
+            android:contentDescription="defImage" />
 
     </LinearLayout>
 
 
     <TextView
         android:layout_width="match_parent"
+        android:fontFamily="@font/welcome"
+        android:textSize="28sp"
         android:layout_height="40dp"
         android:textColor="@color/white"
-        android:background="@color/gray"
+        android:background="@color/black"
         android:text="dishName"
         android:gravity="center"
         android:id="@+id/dishName"/>
@@ -58,8 +50,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/welcome"
                 android:gravity="left"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:paddingTop="20dp"
                 android:text="Ingredients"/>
 
@@ -68,14 +61,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:paddingTop="10dp"
+                android:textSize="16sp"
                 android:text="ingredient info"
                 android:id="@+id/dishIngredient"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/welcome"
                 android:gravity="left"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:paddingTop="20dp"
                 android:text="Instructions"/>
 
@@ -84,14 +79,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:paddingTop="10dp"
+                android:textSize="16sp"
                 android:text="instructions"
                 android:id="@+id/dishInstruct"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/welcome"
                 android:gravity="left"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:paddingTop="20dp"
                 android:text="Nutritional information"/>
 
@@ -100,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:paddingTop="10dp"
+                android:textSize="16sp"
                 android:text="nutrition info"
                 android:id="@+id/dishNutrition"/>
         </LinearLayout>
@@ -114,7 +112,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/welcome"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:id="@+id/modifyButton"
             android:backgroundTint="@color/black"
             android:text="Modify Dish"/>
@@ -128,7 +128,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/welcome"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:id="@+id/deleteButton"
             android:backgroundTint="@color/black"
             android:text="Delete Dish"/>
