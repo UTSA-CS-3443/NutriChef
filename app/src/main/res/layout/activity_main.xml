@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/healthy_dinner_recipes"
+    android:background="@drawable/main"
     tools:context=".MainActivity">
 
     <View
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#B0B0B0"
-        android:backgroundTint="@color/black"/>
+        android:backgroundTint="@color/coolgray"/>
 
     <TextView
         android:id="@+id/title_text"
@@ -19,29 +19,35 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
         android:paddingTop="50dp"
+        android:fontFamily="@font/welcome"
         android:text="Welcome to our meal app!"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp" />
+        android:textColor="#000000"
+        android:textSize="33sp" />
 
     <Button
         android:id="@+id/start_button"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
         android:layout_gravity="center_horizontal|bottom"
+        android:fontFamily="@font/welcome"
         android:layout_marginBottom="100dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/coolgray"
         android:text="@string/start_now"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textSize="24sp"
         />
 
     <Button
         android:id="@+id/helpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="2dp"
+        android:backgroundTint="@color/coolgray"
         android:text="?"
-        android:textSize="32sp"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:layout_gravity="bottom"
         />
 

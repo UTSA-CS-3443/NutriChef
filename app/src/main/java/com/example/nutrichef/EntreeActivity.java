@@ -70,6 +70,8 @@ public class EntreeActivity extends AppCompatActivity {
         return entreeDishes;
     }
 
+
+
     private void addDishButton(Dish dish, LinearLayout container) {
         LinearLayout dishLayout = new LinearLayout(this);
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);

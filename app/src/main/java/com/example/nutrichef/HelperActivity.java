@@ -22,9 +22,7 @@ public class HelperActivity extends AppCompatActivity {
                 "- **Select Recipes by Category**: Navigate through different categories (Appetizer, Entrée, Dessert) using the buttons at the bottom of the screen to explore various recipes.\n" +
                 "\n- **Add New Dish**: Tap the '+' icon at the bottom of the screen. You will be prompted to enter the Dish Name, Ingredients, Instructions, and Nutrition Info.\n" +
                 "\n- **Remove Dish**: To delete a dish, select it from your recipe list. On the selected page, click the 'Remove Dish' button in the bottom left corner. A confirmation prompt will appear, as this action is irreversible.\n" +
-                "\n- **Modify Dish**: Choose the dish you wish to edit. On the selected page, click the 'Modify Dish' button in the bottom right corner. This allows you to update Ingredients, Instructions, or Nutrition Info. Confirm the changes when prompted.\n" +
-                "\n- **Favorite a Dish**: Open the dish you want to mark as a favorite. In the upper right corner, click the 'Favorite' button to save it to your favorites.";
-
+                "\n- **Modify Dish**: Choose the dish you wish to edit. On the selected page, click the 'Modify Dish' button in the bottom right corner. This allows you to update Ingredients, Instructions, or Nutrition Info. Confirm the changes when prompted.\n";
         helperView.setText(helpText);
     }
 }

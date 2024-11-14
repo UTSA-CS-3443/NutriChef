@@ -60,22 +60,36 @@ public class DishActivity extends AppCompatActivity {
         int imageResourceId = getDishImageResourceId(dish.getDishType());
         dishImageView.setImageResource(imageResourceId);
 
+        // Functionality for the back button
+        ImageButton backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            if (mealType.equals("entree")) {
+                intent = new Intent(DishActivity.this, EntreeActivity.class);
+            } else if (mealType.equals("dessert")) {
+                intent = new Intent(DishActivity.this, DessertActivity.class);
+            } else if (mealType.equals("appetizer")) {
+                intent = new Intent(DishActivity.this, AppetizerActivity.class);
+            }
+            startActivity(intent);
+        });
+
         // Creates Intent for the modify button
         Button modifyButton = findViewById(R.id.modifyButton);
         modifyButton.setOnClickListener(v -> {
-            Intent intent = new Intent(DishActivity.this, ModifyActivity.class);
-            intent.putExtra("DishName", finalDish.getDishName()); // Use finalDish
-            intent.putExtra("MealType", mealType);
-            startActivity(intent);
+            Intent intent2 = new Intent(DishActivity.this, ModifyActivity.class);
+            intent2.putExtra("DishName", finalDish.getDishName()); // Use finalDish
+            intent2.putExtra("MealType", mealType);
+            startActivity(intent2);
         });
 
         // Creates Intent for the delete button
         Button deleteButton = findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(v -> {
-            Intent intent = new Intent(DishActivity.this, DeleteActivity.class);
-            intent.putExtra("DishName", finalDish.getDishName()); // Use finalDish
-            intent.putExtra("MealType", mealType);
-            startActivity(intent);
+            Intent intent3 = new Intent(DishActivity.this, DeleteActivity.class);
+            intent3.putExtra("DishName", finalDish.getDishName()); // Use finalDish
+            intent3.putExtra("MealType", mealType);
+            startActivity(intent3);
         });
 
 
