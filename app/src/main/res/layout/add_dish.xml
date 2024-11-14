@@ -3,80 +3,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#C8C2B9"
     android:gravity="center_horizontal">
 
+    <!-- Title TextView -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Add your dish" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="Separate items with commas" />
+        android:text="Add your dish"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:fontFamily="@font/welcome"
+        android:layout_marginBottom="8dp" />
 
+    <!-- Subtitle TextView -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Dish name:"/>
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Dish Name Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dish name:"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:fontFamily="@font/welcome"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Dish Name Input -->
     <EditText
         android:id="@+id/userInput1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter dish name here"
-        android:inputType="text" />
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:backgroundTint="#000000"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Ingredients Label -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Ingredients:"/>
+        android:text="Ingredients:"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:fontFamily="@font/welcome"
+        android:layout_marginBottom="4dp" />
 
+    <!-- Ingredients Input -->
     <EditText
         android:id="@+id/userInput2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter ingredients here"
-        android:inputType="text" />
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:backgroundTint="#000000"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Instructions Label -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Instructions:"/>
+        android:text="Instructions:"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:fontFamily="@font/welcome"
+        android:layout_marginBottom="4dp" />
 
+    <!-- Instructions Input -->
     <EditText
         android:id="@+id/userInput3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter instructions here"
-        android:inputType="text" />
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:backgroundTint="#000000"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Nutrition Info Label -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Nutrition info:"/>
+        android:text="Nutrition info:"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:fontFamily="@font/welcome"
+        android:layout_marginBottom="4dp" />
 
+    <!-- Nutrition Info Input -->
     <EditText
         android:id="@+id/userInput4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter nutrition info here"
-        android:inputType="text" />
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:backgroundTint="#000000"
+        android:layout_marginBottom="24dp" />
 
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="add dish"
-            android:id="@+id/add" />
-
-
-
-
-
-
+    <!-- Add Dish Button -->
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add dish"
+        android:textColor="#C8C2B9"
+        android:textSize="24sp"
+        android:fontFamily="@font/welcome"
+        android:backgroundTint="#000000" />
 </LinearLayout>

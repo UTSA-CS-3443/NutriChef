@@ -127,6 +127,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#C8C2B9"
+        android:textSize="24sp"
+        android:fontFamily="@font/welcome"
         android:backgroundTint="@color/black"
         android:text="Confirm Changes" />
 </LinearLayout>
