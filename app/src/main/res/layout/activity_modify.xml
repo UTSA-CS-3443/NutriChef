@@ -31,8 +31,10 @@
         android:id="@+id/editDishName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:textColor="@color/white"
-        android:background="@color/gray"
+        android:textSize="28sp"
+        android:fontFamily="@font/welcome"
+        android:textColor="#C8C2B9"
+        android:background="@color/black"
         android:hint="Dish Name"
         android:gravity="center"
         android:inputType="text" />
@@ -52,8 +54,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/welcome"
+                android:textSize="25sp"
                 android:gravity="left"
-                android:textSize="20sp"
                 android:paddingTop="20dp"
                 android:text="Ingredients" />
 
@@ -61,6 +65,8 @@
                 android:id="@+id/editDishIngredients"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:hint="Enter ingredients"
                 android:inputType="textMultiLine"
@@ -71,27 +77,33 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/welcome"
+                android:textSize="25sp"
                 android:gravity="left"
-                android:textSize="20sp"
                 android:paddingTop="20dp"
                 android:text="Instructions" />
 
+            <!-- Editable Nutrition Info Section -->
             <EditText
                 android:id="@+id/editDishInstructions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:hint="Enter instructions"
                 android:inputType="textMultiLine"
                 android:minLines="3"
                 android:paddingTop="10dp" />
 
-            <!-- Editable Nutrition Info Section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/welcome"
+                android:textSize="25sp"
                 android:gravity="left"
-                android:textSize="20sp"
                 android:paddingTop="20dp"
                 android:text="Nutrition Info" />
 
@@ -99,6 +111,8 @@
                 android:id="@+id/editDishNutrition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:hint="Enter nutrition info"
                 android:inputType="textMultiLine"

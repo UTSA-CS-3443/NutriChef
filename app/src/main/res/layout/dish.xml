@@ -31,7 +31,7 @@
         android:fontFamily="@font/welcome"
         android:textSize="28sp"
         android:layout_height="40dp"
-        android:textColor="@color/white"
+        android:textColor="#C8C2B9"
         android:background="@color/black"
         android:text="dishName"
         android:gravity="center"
@@ -50,6 +50,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:fontFamily="@font/welcome"
                 android:gravity="left"
                 android:textSize="25sp"
@@ -59,6 +60,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:paddingTop="10dp"
                 android:textSize="16sp"
@@ -68,6 +70,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:fontFamily="@font/welcome"
                 android:gravity="left"
                 android:textSize="25sp"
@@ -77,6 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:paddingTop="10dp"
                 android:textSize="16sp"
@@ -86,6 +90,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:fontFamily="@font/welcome"
                 android:gravity="left"
                 android:textSize="25sp"
@@ -95,6 +100,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:gravity="left"
                 android:paddingTop="10dp"
                 android:textSize="16sp"
@@ -112,6 +118,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#C8C2B9"
             android:fontFamily="@font/welcome"
             android:layout_weight="1"
             android:textStyle="bold"
@@ -120,7 +127,7 @@
             android:text="Modify Dish"/>
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="135dp"
             android:layout_height="match_parent">
 
         </TextView>
@@ -128,6 +135,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#C8C2B9"
             android:fontFamily="@font/welcome"
             android:layout_weight="1"
             android:textStyle="bold"
