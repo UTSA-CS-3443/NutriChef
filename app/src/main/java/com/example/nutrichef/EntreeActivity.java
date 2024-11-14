@@ -2,10 +2,12 @@ package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.example.nutrichef.model.Dish;
 import com.example.nutrichef.model.DishContainer;
@@ -79,6 +81,9 @@ public class EntreeActivity extends AppCompatActivity {
         Button dishInfo = new Button(this);
         dishInfo.setText(dish.getDishName());
         dishInfo.setTextSize(18);
+
+        Typeface customFont = ResourcesCompat.getFont(this, R.font.welcome);
+        dishInfo.setTypeface(customFont);
 
         dishInfo.setOnClickListener(v -> {
             Intent intent = new Intent(EntreeActivity.this, DishActivity.class);
