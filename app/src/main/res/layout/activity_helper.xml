@@ -3,22 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HelperActivity"
-    android:background="#C8C2B9" >
+    android:background="#C8C2B9"
+    tools:context=".HelperActivity">
 
-    <!-- Background View -->
-    <View
-        android:id="@+id/gray_box"
+    <!-- ScrollView to make the text scrollable -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <!-- TextView to display help info -->
-    <TextView
-        android:id="@+id/helperView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:textColor="#000000"
-        android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Heading TextView -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage Instructions:"
+                android:fontFamily="@font/welcome"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:paddingBottom="12dp" />
+
+            <!-- Help TextView -->
+            <TextView
+                android:id="@+id/helperView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp" />
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
