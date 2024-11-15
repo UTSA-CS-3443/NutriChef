@@ -48,7 +48,8 @@
         android:fontFamily="@font/welcome"
         android:backgroundTint="@color/black"
         android:layout_above="@id/bottomButtonsLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
     <!-- Bottom Navigation Buttons -->
     <LinearLayout
