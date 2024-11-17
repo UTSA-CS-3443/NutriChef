@@ -8,10 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
-
 import com.example.nutrichef.model.Dish;
-import com.example.nutrichef.model.DishContainer;
-
 import java.util.ArrayList;
 
 public class EntreeActivity extends AppCompatActivity {

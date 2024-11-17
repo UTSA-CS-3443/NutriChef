@@ -5,21 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.nutrichef.model.Dish;
 import com.example.nutrichef.model.DishContainer;
-
 import java.util.ArrayList;
 
-/**
- * @author gar407
- * The MainActivity class is the main entry point for the application.
- * It dynamically generates buttons for each Airship in the Fleet and
- * handles click events to launch AirshipActivity with the selected Airship's registry.
- *
- * This class also provides a method to retrieve an Airship by its registry.
- *
- */
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<Dish> dishes = new ArrayList<>();

@@ -1,7 +1,5 @@
 package com.example.nutrichef.model;
 
-
-
 public class Dish {
 
     private String dishName, dishIngredients, dishInstructions, dishNutrients, dishType;

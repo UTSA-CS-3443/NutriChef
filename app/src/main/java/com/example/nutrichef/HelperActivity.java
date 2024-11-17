@@ -5,7 +5,6 @@ import android.text.Html;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class HelperActivity extends AppCompatActivity {
 
         @Override

@@ -1,14 +1,11 @@
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.nutrichef.model.Dish;
 import com.example.nutrichef.model.DishContainer;
 
