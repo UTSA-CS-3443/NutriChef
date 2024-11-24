@@ -1,3 +1,9 @@
+/**
+ * The Helper activity consists of a TextView containing Html formatted
+ * text that are instructions and a description for the application.
+ * This is the screen where the user can reference to for navigation help.
+ */
+
 package com.example.nutrichef;
 
 import android.os.Bundle;
@@ -16,7 +22,7 @@ public class HelperActivity extends AppCompatActivity {
         // Get the TextView from the layout
         TextView helperView = findViewById(R.id.helperView);
 
-
+            // Html formatted text
             String helpText = "<br>" +
                     "<b>App Functionalities:</b><br>" +
                     "- <b>Select Recipes by Category</b>: Navigate through different categories (Appetizer, Entrée, Dessert) using the buttons at the bottom of the screen to explore various recipes.<br><br>" +

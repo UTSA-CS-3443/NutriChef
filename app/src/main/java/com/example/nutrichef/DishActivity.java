@@ -1,3 +1,8 @@
+/**
+ * DishActivity displays detailed information about a selected dish, including its name, ingredients, instructions, and nutritional info.
+ * It provides options to modify or delete the dish through buttons that navigate to the respective activities.
+ * Additionally, it handles back navigation to the previous activity and retrieves a corresponding image based on the dish type.
+ */
 package com.example.nutrichef;
 
 import static com.example.nutrichef.MainActivity.dishes;
@@ -73,7 +78,7 @@ public class DishActivity extends AppCompatActivity {
             startActivity(intent3);
         });
 
-
+        // Handles movement to the previous activity
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -84,7 +89,11 @@ public class DishActivity extends AppCompatActivity {
         });
     }
 
-    // Handles retrieval of dish type images
+    /**
+     * Handles retrieval of dish type images
+     * @param dishType
+     * @return
+     */
     private int getDishImageResourceId(String dishType) {
         switch (dishType.toLowerCase()) {
             case "entree":
@@ -98,6 +107,11 @@ public class DishActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     *  Handles retrieval of dish by the name
+     * @param name
+     * @return
+     */
     public static Dish getDishByName(String name) {
         if (dishes != null) {
             for (Dish d : dishes) {
