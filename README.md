@@ -1,5 +1,6 @@
 # NutriChef
-# Devloped by: Mauricio Villegas, Ben Keilholz, William Starkey, and Luke Alvarado
+# Devloped by: 
+    Mauricio Villegas, Ben Keilholz, William Starkey, and Luke Alvarado
 
 # Application Discription: 
   NutriChef is an app that allows users to explore numerous recipes, organized by categories such as Appetizers, Entrees, and Desserts. The app includes three key features that enable users to customize their experience: they can add, modify, or delete dishes according to their preferences.
