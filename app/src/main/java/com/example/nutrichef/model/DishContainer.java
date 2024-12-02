@@ -11,8 +11,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * This class handles managing the storage of our dishes, for that reason we haven named it DishContainer
+ * In this class we allow the ArrayList storing all of our dihses to be modified in a few different ways
+ * including adding, modifying, and removing. It also has a method to handle reading the file information
+ * from the JVM's memory
+ *
+ * @author Benjamin Keilholz
+ *
+ * UTSA CS 3443
+ * NutriChef
+ * Fall 2024
+ */
+
+
+
 public class DishContainer {
+
+    //Instance variables
     private Context context;
+
+    //Must provide context when initializing a DishContainer
     public DishContainer(Context context){
         this.context = context;
 
@@ -91,11 +110,11 @@ public class DishContainer {
         FileInputStream in;
         BufferedReader reader;
 
-        dishes.clear(); // Empty the arraylist and start from scratch
+        dishes.clear(); // Empty the arraylist and start from scratch to prevent duplicates
 
         files = context.getFilesDir().listFiles();
-        if (files != null && files.length > 1) { // Ensure files is not null and has more than one file
-            for (int i = 1; i < files.length; i++) { // Skip the first file (e.g., profileInstalled.txt)
+        if (files != null && files.length > 1) { // Ensure there are files
+            for (int i = 1; i < files.length; i++) { // Skip the first file (profileInstalled.txt)
                 try {
                     // Open file and prepare for reading
                     in = context.openFileInput(files[i].getName());
@@ -167,16 +186,21 @@ public class DishContainer {
     }
 
 
-
-    //Takes in a dish and creates its file. Calls loadDishes() to refresh arrayList
+    /**
+     * Takes in a dish and creates its file. Calls loadDishes() to refresh arrayList
+     * @param newDish
+     */
     public void addDish(Dish newDish){
         FileOutputStream out;
         try {
+            //Create and open file for writing
             out = context.openFileOutput(newDish.getDishName().replace(' ', '-') + ".txt", Context.MODE_PRIVATE);
-
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
 
+            //Write dishType and name
             writer.write(newDish.getDishType() + ": " + newDish.getDishName() + "\n");
+
+            //Use loop to write all information to the new file
             for(int i = 1; i <= 3; i++){
                 switch(i){
                     case 1:
@@ -186,7 +210,6 @@ public class DishContainer {
                             s = s.trim();
                             writer.write(s +"\n");
                         }
-                        writer.write("\n");
                         break;
                     case 2:
                         writer.write("Instructions: \n");
@@ -195,7 +218,6 @@ public class DishContainer {
                             s = s.trim();
                             writer.write(s +"\n");
                         }
-                        writer.write("\n");
                         break;
                     case 3:
                         writer.write("Nutritional Information: \n");
@@ -204,7 +226,6 @@ public class DishContainer {
                             s = s.trim();
                             writer.write(s +"\n");
                         }
-                        writer.write("\n");
                         break;
                 }
             }
@@ -213,7 +234,10 @@ public class DishContainer {
         loadDishes();//Update list of dishes
     }
 
-    //Takes in a dish to remove. Deletes its file. Calls loadDishes() to refresh arrayList
+    /**
+     * Takes in a dish to remove. Deletes its file. Calls loadDishes() to refresh arrayList
+     * @param dish
+     */
     public void removeDish(Dish dish){
         File[] files = context.getFilesDir().listFiles();
 
@@ -227,8 +251,11 @@ public class DishContainer {
         loadDishes();//Update list of dishes
     }
 
-    //Takes in a dish to modify and calls addDish. This method may end up being unnecessary other than clarity
-    //But we will keep it for now
+    /**
+     * Takes in a dish to modify and calls addDish.
+     * This method is simply here to increase clarity of functionality
+     * @param modifiedDish
+     */
     public void modifyDish(Dish modifiedDish){
         addDish(modifiedDish);
     }
