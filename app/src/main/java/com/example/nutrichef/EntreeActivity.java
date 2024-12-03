@@ -11,8 +11,19 @@ import androidx.core.content.res.ResourcesCompat;
 import com.example.nutrichef.model.Dish;
 import java.util.ArrayList;
 
+/**
+ * This class handles the screen for displaying all Entree dishes stored within the app
+ *
+ * @author Luke Alvarado
+ *
+ * UTSA CS 3443
+ * NutriChef
+ * Fall 2024
+ */
+
 public class EntreeActivity extends AppCompatActivity {
 
+    //Layout for storing individual dishes dynamically
     private LinearLayout dishView;
 
     @Override
@@ -21,6 +32,7 @@ public class EntreeActivity extends AppCompatActivity {
         setContentView(R.layout.entree);
         dishView = findViewById(R.id.buttonContainer);
 
+        //Button for adding a dish
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
             Intent intent = new Intent(EntreeActivity.this, AddActivity.class);
@@ -28,6 +40,7 @@ public class EntreeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //Buttons for taking user to other 2 screens of dishes
         Button appetizerButton = findViewById(R.id.appetizerButton);
         appetizerButton.setOnClickListener(v -> startActivity(new Intent(EntreeActivity.this, AppetizerActivity.class)));
 
@@ -37,12 +50,14 @@ public class EntreeActivity extends AppCompatActivity {
 
     }
 
+    //Reload all dishes everytime this screen is opened
     @Override
     protected void onResume() {
         super.onResume();
         loadEntreeDishes();
     }
 
+    //Method for loading all appetizers into this screen
     private void loadEntreeDishes() {
         // Clear the container to prevent duplicate entries
         dishView.removeAllViews();
@@ -54,6 +69,10 @@ public class EntreeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Returns all dishes that are labeled as appetizers
+     * @return
+     */
     private ArrayList<Dish> getEntreeDishes() {
         ArrayList<Dish> entreeDishes = new ArrayList<>();
 
@@ -69,8 +88,11 @@ public class EntreeActivity extends AppCompatActivity {
         return entreeDishes;
     }
 
-
-
+    /**
+     * Adds a specific dish to the screen
+     * @param dish
+     * @param container
+     */
     private void addDishButton(Dish dish, LinearLayout container) {
         LinearLayout dishLayout = new LinearLayout(this);
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -94,6 +116,11 @@ public class EntreeActivity extends AppCompatActivity {
         container.addView(dishLayout);
     }
 
+    /**
+     * Find a dish based on name
+     * @param name
+     * @return
+     */
     public static Dish getDishByName(String name) {
         for (Dish dish : dishes) {
             if (dish.getDishName().equals(name)) {

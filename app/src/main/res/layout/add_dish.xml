@@ -113,7 +113,7 @@
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add dish"
+        android:text="Add Dish"
         android:textColor="#C8C2B9"
         android:textSize="24sp"
         android:fontFamily="@font/welcome"

@@ -12,8 +12,19 @@ import com.example.nutrichef.model.Dish;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class handles the screen for displaying all Dessert dishes stored within the app
+ *
+ * @author Luke Alvarado
+ *
+ * UTSA CS 3443
+ * NutriChef
+ * Fall 2024
+ */
+
 public class DessertActivity extends AppCompatActivity {
 
+    //Layout for storing individual dishes dynamically
     private LinearLayout dishView;
 
     @Override
@@ -23,6 +34,7 @@ public class DessertActivity extends AppCompatActivity {
 
         dishView = findViewById(R.id.buttonContainer);
 
+        //Button for adding a dish
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
             Intent intent = new Intent(DessertActivity.this, AddActivity.class);
@@ -30,6 +42,7 @@ public class DessertActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //Buttons for taking user to other 2 screens of dishes
         Button entreeButton = findViewById(R.id.entreeButton);
         entreeButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, EntreeActivity.class)));
 
@@ -37,12 +50,14 @@ public class DessertActivity extends AppCompatActivity {
         appetizerButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, AppetizerActivity.class)));
     }
 
+    //Reload all dishes everytime this screen is opened
     @Override
     protected void onResume() {
         super.onResume();
         loadDessertDishes();
     }
 
+    //Method for loading all appetizers into this screen
     private void loadDessertDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
@@ -53,6 +68,11 @@ public class DessertActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Returns all dishes that are labeled as appetizers
+     * @param allDishes
+     * @return
+     */
     private ArrayList<Dish> getDessertDishes(List<Dish> allDishes) {
         ArrayList<Dish> dessertDishes = new ArrayList<>();
         for (Dish dish : allDishes) {
@@ -63,17 +83,26 @@ public class DessertActivity extends AppCompatActivity {
         return dessertDishes;
     }
 
+    /**
+     * Adds a specific dish to the screen
+     * @param dish
+     * @param container
+     */
     private void addDishButton(Dish dish, LinearLayout container) {
+        //Declare new layout
         LinearLayout dishLayout = new LinearLayout(this);
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);
 
+        //Declare button for new dish
         Button dishInfo = new Button(this);
         dishInfo.setText(dish.getDishName());
         dishInfo.setTextSize(18);
 
+        //Set font
         Typeface customFont = ResourcesCompat.getFont(this, R.font.welcome);
         dishInfo.setTypeface(customFont);
 
+        //When clicked move to DishActivity
         dishInfo.setOnClickListener(v -> {
             Intent intent = new Intent(DessertActivity.this, DishActivity.class);
             intent.putExtra("DishName", dish.getDishName());
@@ -81,11 +110,17 @@ public class DessertActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        //Add dish to layout
         dishLayout.addView(dishInfo);
         dishLayout.setPadding(0, 0, 0, 100);
         container.addView(dishLayout);
     }
 
+    /**
+     * Find a dish based on name
+     * @param name
+     * @return
+     */
     public static Dish getDishByName(String name) {
         for (Dish dish : dishes) {
             if (dish.getDishName().equals(name)) {

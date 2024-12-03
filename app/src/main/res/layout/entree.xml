@@ -42,10 +42,10 @@
     <Button
         android:id="@+id/addNewDishButton"
         android:textColor="#C8C2B9"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="+\nadd new dish"
+        android:layout_height="wrap_content"
+        android:text="+\nAdd New Dish"
         android:fontFamily="@font/welcome"
         android:backgroundTint="@color/black"
         android:layout_above="@id/bottomButtonsLayout"
@@ -66,13 +66,12 @@
             android:id="@+id/appetizerButton"
             android:textColor="#C8C2B9"
             android:fontFamily="@font/welcome"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_width="3dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
             android:textSize="16sp"
             android:backgroundTint="@color/black"
-            android:text="appetizers"
+            android:text="Appetizers"
             android:layout_marginEnd="8dp" />
 
         <Button
@@ -80,11 +79,11 @@
             android:textColor="#C8C2B9"
             android:fontFamily="@font/welcome"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="entrees"
+            android:text="Entrees"
             android:textStyle="bold"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:backgroundTint="@color/red"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp" />
@@ -94,11 +93,11 @@
             android:textColor="#C8C2B9"
             android:fontFamily="@font/welcome"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:backgroundTint="@color/black"
-            android:text="desserts"
+            android:text="Desserts"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
