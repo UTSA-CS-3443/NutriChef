@@ -26,7 +26,7 @@ public class DishActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("DishName");
         String mealType = getIntent().getStringExtra("MealType");
 
-        // Initialize dish as a non-final variable
+        // Initialize dish as a non-final variable.
         Dish dish = null;
 
         // Ensure that dish is fetched based on the meal type

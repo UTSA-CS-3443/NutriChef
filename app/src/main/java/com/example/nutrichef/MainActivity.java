@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Static list of dishes, accessible from other activities
     public static ArrayList<Dish> dishes = new ArrayList<>();
-    // Instance of DishContainer to manage dish data
+    // Instance of DishContainer to manage dish data.
     DishContainer dishContainer = new DishContainer(this);
 
     @Override

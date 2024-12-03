@@ -23,7 +23,7 @@ public class DeleteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.delete_dish);
 
-        // Retrieve dish name passed from the previous activity
+        // Retrieve dish name passed from the previous activity.
         String dishName = getIntent().getStringExtra("DishName");
         Button deleteButton = findViewById(R.id.deleteButton);
         String mealType = getIntent().getStringExtra("MealType");

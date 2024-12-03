@@ -17,7 +17,7 @@ import com.example.nutrichef.model.DishContainer;
 
 public class AddActivity extends AppCompatActivity{
 
-    // Create an instance of DishContainer to manage the list of dishes
+    // Create an instance of DishContainer to manage the list of dishes.
     DishContainer dishContainer = new DishContainer(this);
 
     @Override

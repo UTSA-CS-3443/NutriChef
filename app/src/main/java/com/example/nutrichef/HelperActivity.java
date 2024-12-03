@@ -22,7 +22,7 @@ public class HelperActivity extends AppCompatActivity {
         // Get the TextView from the layout
         TextView helperView = findViewById(R.id.helperView);
 
-            // Html formatted text
+            // Html formatted text.
             String helpText = "<br>" +
                     "<b>App Functionalities:</b><br>" +
                     "- <b>Select Recipes by Category</b>: Navigate through different categories (Appetizer, Entrée, Dessert) using the buttons at the bottom of the screen to explore various recipes.<br><br>" +

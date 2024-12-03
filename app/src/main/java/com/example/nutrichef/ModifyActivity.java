@@ -83,7 +83,7 @@ public class ModifyActivity extends AppCompatActivity {
                 DishContainer dishContainer = new DishContainer(ModifyActivity.this);
                 dishContainer.modifyDish(dish);
 
-                // Show a confirmation toast message and navigate back to the DishActivity
+                // Show a confirmation toast message and navigate back to the DishActivity.
                 Toast.makeText(ModifyActivity.this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ModifyActivity.this, DishActivity.class);
                 intent.putExtra("DishName", dish.getDishName());
