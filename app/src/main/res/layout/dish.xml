@@ -124,7 +124,7 @@
             android:textStyle="bold"
             android:id="@+id/modifyButton"
             android:backgroundTint="@color/black"
-            android:text="Modify Dish"/>
+            android:text="modify dish"/>
 
         <TextView
             android:layout_width="135dp"
@@ -141,7 +141,7 @@
             android:textStyle="bold"
             android:id="@+id/deleteButton"
             android:backgroundTint="@color/black"
-            android:text="Delete Dish"/>
+            android:text="delete dish"/>
     </LinearLayout>
 </LinearLayout>
 
