@@ -2,6 +2,9 @@
 # Devloped by: 
     Mauricio Villegas, Ben Keilholz, William Starkey, and Luke Alvarado
 
+# Application Setup:
+    In android Studio, slect open, then Open from Repository, where copying and pasting the repository url will open the project. Then select File -> Sync Project with Gradle Files, which will then build the project off of local sdk placement and configurations. Then, build the project and the program will run in the emulator when selected to start.
+
 # Application Description: 
   NutriChef is an app that allows users to explore numerous recipes, organized by categories such as Appetizers, Entrees, and Desserts. The app includes three key features that enable users to customize their experience: they can add, modify, or delete dishes according to their preferences.
 
