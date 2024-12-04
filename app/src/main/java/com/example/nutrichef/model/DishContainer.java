@@ -1,7 +1,9 @@
 package com.example.nutrichef.model;
 
 import static com.example.nutrichef.MainActivity.dishes;
+
 import android.content.Context;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,87 +14,55 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 /**
- * This class handles managing the storage of our dishes, for that reason we haven named it DishContainer
- * In this class we allow the ArrayList storing all of our dihses to be modified in a few different ways
- * including adding, modifying, and removing. It also has a method to handle reading the file information
- * from the JVM's memory
+ * This class manages the storage and retrieval of {@link Dish} objects.
+ * It provides functionality to add, remove, modify, and load dishes, as well as to initialize default dishes.
+ * Dish information is stored in the device's local storage as text files.
  *
  * @author Benjamin Keilholz
+ * @version 1.0
  *
- * UTSA CS 3443
- * NutriChef
- * Fall 2024
+ * UTSA CS 3443 - NutriChef - Fall 2024
  */
-
-
-
 public class DishContainer {
 
-    //Instance variables
+    /**
+     * The context of the application, used for file operations.
+     */
     private Context context;
 
-    //Must provide context when initializing a DishContainer
-    public DishContainer(Context context){
+    /**
+     * Constructs a {@code DishContainer} with the specified context.
+     *
+     * @param context the context used for accessing local storage
+     */
+    public DishContainer(Context context) {
         this.context = context;
-
     }
 
-    //Create all default dishes on startup
-    public void startUp(){
-        Dish appetizer1 = new Dish();
-            appetizer1.setDishName("Mozzarella Sticks");
-            appetizer1.setDishIngredients("Mozzarella Cheese, Breading, Buttermilk");
-            appetizer1.setDishInstructions("Coat cheese in buttermilk, Coat with breading, Fry");
-            appetizer1.setDishNutrients("5g Sodium, 2g Protein");
-            appetizer1.setDishType("appetizer");
-        Dish appetizer2 = new Dish();
-            appetizer2.setDishName("Nachos");
-            appetizer2.setDishIngredients("Tortilla chips, cheese, chicken");
-            appetizer2.setDishInstructions("Coat chips with cheese, Coat chips with chicken");
-            appetizer2.setDishNutrients("2g Sodium, 5g Protein");
-            appetizer2.setDishType("appetizer");
-        Dish appetizer3 = new Dish();
-            appetizer3.setDishName("Fried pickles");
-            appetizer3.setDishIngredients("Pickles, Buttermilk, Breading");
-            appetizer3.setDishInstructions("Dip pickles in buttermilk, Coat with breading, Fry");
-            appetizer3.setDishNutrients("6g Sodium, 1g Protein");
-            appetizer3.setDishType("appetizer");
-        Dish entree1 = new Dish();
-            entree1.setDishName("Steak");
-            entree1.setDishIngredients("Meat, Seasoning, Butter");
-            entree1.setDishInstructions("Season the meat, Cook in a pan while basting with butter, Let rest");
-            entree1.setDishNutrients("10g protein, 2g Sodium");
-            entree1.setDishType("entree");
-        Dish entree2 = new Dish();
-            entree2.setDishName("Cheeseburger");
-            entree2.setDishIngredients("Beef, Cheese, Bread");
-            entree2.setDishInstructions("Cook meat in a patty shape, Place cheese on patty, Place patty on Bun");
-            entree2.setDishNutrients("5g Sodium, 8g Protein");
-            entree2.setDishType("entree");
-        Dish entree3 = new Dish();
-            entree3.setDishName("Ravioli");
-            entree3.setDishIngredients("Flour, Eggs, Cheese");
-            entree3.setDishInstructions("Make dough, Cut dough into proper shape, Place cheese in shapes, Cook");
-            entree3.setDishNutrients("3g Sodium, 5g Protein");
-            entree3.setDishType("entree");
-        Dish dessert1 = new Dish();
-            dessert1.setDishName("Cake");
-            dessert1.setDishIngredients("Flour, Milk, Eggs, Cocoa Powder, Sugar");
-            dessert1.setDishInstructions("Mix wet ingredients in bowl, Combine with Dry, Bake");
-            dessert1.setDishNutrients("6g Sodium, 3g Protein, 6g Sugar");
-            dessert1.setDishType("dessert");
-        Dish dessert2 = new Dish();
-            dessert2.setDishName("Ice Cream");
-            dessert2.setDishIngredients("Heavy Cream, Milk, Sugar");
-            dessert2.setDishInstructions("Combine all ingredients, Freeze");
-            dessert2.setDishNutrients("3g Sodium, 2g Protein, 4g Sugar");
-            dessert2.setDishType("dessert");
-        Dish dessert3 = new Dish();
-            dessert3.setDishName("Cookies");
-            dessert3.setDishIngredients("Flour, Eggs, Butter, Milk, Chocolate Chips");
-            dessert3.setDishInstructions("Combine all wet ingredients in a bowl, Add in Dry and Chocolate chips, Bake");
-            dessert3.setDishNutrients("4g Sodium, 2g Protein, 4g Sugar");
-            dessert3.setDishType("dessert");
+    /**
+     * Initializes the application with a set of default dishes.
+     * Default dishes are added to the dish list on startup.
+     */
+    public void startUp() {
+        Dish appetizer1 = new Dish("appetizer", "Mozzarella Sticks", "Mozzarella Cheese, Breading, Buttermilk",
+                "Coat cheese in buttermilk, Coat with breading, Fry", "5g Sodium, 2g Protein");
+        Dish appetizer2 = new Dish("appetizer", "Nachos", "Tortilla chips, cheese, chicken",
+                "Coat chips with cheese, Coat chips with chicken", "2g Sodium, 5g Protein");
+        Dish appetizer3 = new Dish("appetizer", "Fried pickles", "Pickles, Buttermilk, Breading",
+                "Dip pickles in buttermilk, Coat with breading, Fry", "6g Sodium, 1g Protein");
+        Dish entree1 = new Dish("entree", "Steak", "Meat, Seasoning, Butter",
+                "Season the meat, Cook in a pan while basting with butter, Let rest", "10g protein, 2g Sodium");
+        Dish entree2 = new Dish("entree", "Cheeseburger", "Beef, Cheese, Bread",
+                "Cook meat in a patty shape, Place cheese on patty, Place patty on Bun", "5g Sodium, 8g Protein");
+        Dish entree3 = new Dish("entree", "Ravioli", "Flour, Eggs, Cheese",
+                "Make dough, Cut dough into proper shape, Place cheese in shapes, Cook", "3g Sodium, 5g Protein");
+        Dish dessert1 = new Dish("dessert", "Cake", "Flour, Milk, Eggs, Cocoa Powder, Sugar",
+                "Mix wet ingredients in bowl, Combine with Dry, Bake", "6g Sodium, 3g Protein, 6g Sugar");
+        Dish dessert2 = new Dish("dessert", "Ice Cream", "Heavy Cream, Milk, Sugar",
+                "Combine all ingredients, Freeze", "3g Sodium, 2g Protein, 4g Sugar");
+        Dish dessert3 = new Dish("dessert", "Cookies", "Flour, Eggs, Butter, Milk, Chocolate Chips",
+                "Combine all wet ingredients in a bowl, Add in Dry and Chocolate chips, Bake", "4g Sodium, 2g Protein, 4g Sugar");
+
         addDish(appetizer1);
         addDish(appetizer2);
         addDish(appetizer3);
@@ -104,7 +74,10 @@ public class DishContainer {
         addDish(dessert3);
     }
 
-    //Empties the arrayList and refills it with all existing dish files
+    /**
+     * Loads all dishes from the local storage and updates the dish list.
+     * Clears the current list of dishes and reads files representing dishes from the device's storage.
+     */
     public void loadDishes() {
         File[] files;
         FileInputStream in;
@@ -185,80 +158,57 @@ public class DishContainer {
         }
     }
 
+    /**
+     * Adds a new {@link Dish} to the storage and updates the dish list.
+     *
+     * @param newDish the dish to add
+     */
+    public void addDish(Dish newDish) {
+        try (FileOutputStream out = context.openFileOutput(newDish.getDishName().replace(' ', '-') + ".txt", Context.MODE_PRIVATE);
+             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out))) {
+
+            writer.write(newDish.getDishType() + ": " + newDish.getDishName() + "\n");
+            writer.write("Ingredients: \n");
+            for (String ingredient : newDish.getDishIngredients().split(",")) {
+                writer.write(ingredient.trim() + "\n");
+            }
+            writer.write("Instructions: \n");
+            for (String instruction : newDish.getDishInstructions().split(",")) {
+                writer.write(instruction.trim() + "\n");
+            }
+            writer.write("Nutritional Information: \n");
+            for (String nutrient : newDish.getDishNutrients().split(",")) {
+                writer.write(nutrient.trim() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Error creating the dish file.");
+        }
+        loadDishes();
+    }
 
     /**
-     * Takes in a dish and creates its file. Calls loadDishes() to refresh arrayList
-     * @param newDish
+     * Removes a {@link Dish} from the storage and updates the dish list.
+     *
+     * @param dish the dish to remove
      */
-    public void addDish(Dish newDish){
-        FileOutputStream out;
-        try {
-            //Create and open file for writing
-            out = context.openFileOutput(newDish.getDishName().replace(' ', '-') + ".txt", Context.MODE_PRIVATE);
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out));
-
-            //Write dishType and name
-            writer.write(newDish.getDishType() + ": " + newDish.getDishName() + "\n");
-
-            //Use loop to write all information to the new file
-            for(int i = 1; i <= 3; i++){
-                switch(i){
-                    case 1:
-                        writer.write("Ingredients: \n");
-                        String[] ingredients = newDish.getDishIngredients().split(",");
-                        for(String s : ingredients){
-                            s = s.trim();
-                            writer.write(s +"\n");
-                        }
-                        break;
-                    case 2:
-                        writer.write("Instructions: \n");
-                        String[] instructions = newDish.getDishInstructions().split(",");
-                        for(String s : instructions){
-                            s = s.trim();
-                            writer.write(s +"\n");
-                        }
-                        break;
-                    case 3:
-                        writer.write("Nutritional Information: \n");
-                        String[] nutrition = newDish.getDishNutrients().split(",");
-                        for(String s : nutrition){
-                            s = s.trim();
-                            writer.write(s +"\n");
-                        }
-                        break;
+    public void removeDish(Dish dish) {
+        File[] files = context.getFilesDir().listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.getName().equals(dish.getDishName().replace(' ', '-') + ".txt")) {
+                    file.delete();
                 }
             }
-            writer.close();
-        }catch(IOException e){System.out.print("COULDN'T MAKE THE FILE\n\n\n\n");}
-        loadDishes();//Update list of dishes
+        }
+        loadDishes();
     }
 
     /**
-     * Takes in a dish to remove. Deletes its file. Calls loadDishes() to refresh arrayList
-     * @param dish
+     * Modifies an existing {@link Dish} by overwriting its file with new data.
+     *
+     * @param modifiedDish the dish with updated data
      */
-    public void removeDish(Dish dish){
-        File[] files = context.getFilesDir().listFiles();
-
-        if(files != null)//Make sure array of files is not empty
-            for(File f : files){
-                //If file name == dishName
-                if(f.getName().equals(dish.getDishName().replace(' ', '-') + ".txt"))
-                    //Delete file
-                    f.delete();
-            }
-        loadDishes();//Update list of dishes
-    }
-
-    /**
-     * Takes in a dish to modify and calls addDish.
-     * This method is simply here to increase clarity of functionality
-     * @param modifiedDish
-     */
-    public void modifyDish(Dish modifiedDish){
+    public void modifyDish(Dish modifiedDish) {
         addDish(modifiedDish);
     }
-
 }
-

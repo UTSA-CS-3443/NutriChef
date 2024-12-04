@@ -13,20 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class handles the screen for displaying all Dessert dishes stored within the app
+ * This activity handles the screen for displaying all dessert dishes stored within the app.
+ * It allows users to navigate between different dish types (Appetizers, Entrees, and Desserts),
+ * add new dishes, and view detailed information about each dish.
  *
  * @author Luke Alvarado
- *
- * UTSA CS 3443
- * NutriChef
- * Fall 2024
  */
-
 public class DessertActivity extends AppCompatActivity {
 
-    //Layout for storing individual dishes dynamically
+    // Layout for storing individual dishes dynamically
     private LinearLayout dishView;
 
+    /**
+     * Initializes the activity and sets up the layout with buttons to navigate between screens.
+     * It also sets the functionality for the "Add New Dish" button to open the AddActivity.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after being previously shut down,
+     *                           this bundle contains the data it most recently supplied.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +38,7 @@ public class DessertActivity extends AppCompatActivity {
 
         dishView = findViewById(R.id.buttonContainer);
 
-        //Button for adding a dish
+        // Button for adding a new dish
         Button addButton = findViewById(R.id.addNewDishButton);
         addButton.setOnClickListener(v -> {
             Intent intent = new Intent(DessertActivity.this, AddActivity.class);
@@ -42,7 +46,7 @@ public class DessertActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //Buttons for taking user to other 2 screens of dishes
+        // Buttons for navigating to Appetizer and Entree screens
         Button entreeButton = findViewById(R.id.entreeButton);
         entreeButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, EntreeActivity.class)));
 
@@ -50,17 +54,23 @@ public class DessertActivity extends AppCompatActivity {
         appetizerButton.setOnClickListener(v -> startActivity(new Intent(DessertActivity.this, AppetizerActivity.class)));
     }
 
-    //Reload all dishes everytime this screen is opened
+    /**
+     * Reloads all dishes every time this screen is opened. Filters and displays only dessert dishes.
+     */
     @Override
     protected void onResume() {
         super.onResume();
         loadDessertDishes();
     }
 
-    //Method for loading all appetizers into this screen
+    /**
+     * Loads all dessert dishes into the screen by filtering the full list of dishes
+     * and displaying each dessert as a button.
+     */
     private void loadDessertDishes() {
         // Clear any existing views to prevent duplicates
         dishView.removeAllViews();
+
         // Filter and display dessert dishes
         ArrayList<Dish> dessertDishes = getDessertDishes(dishes);
         for (Dish dish : dessertDishes) {
@@ -69,9 +79,10 @@ public class DessertActivity extends AppCompatActivity {
     }
 
     /**
-     * Returns all dishes that are labeled as appetizers
-     * @param allDishes
-     * @return
+     * Filters and returns all dishes labeled as desserts from a list of all dishes.
+     *
+     * @param allDishes A list of all dishes available in the app.
+     * @return A list of dessert dishes.
      */
     private ArrayList<Dish> getDessertDishes(List<Dish> allDishes) {
         ArrayList<Dish> dessertDishes = new ArrayList<>();
@@ -84,25 +95,27 @@ public class DessertActivity extends AppCompatActivity {
     }
 
     /**
-     * Adds a specific dish to the screen
-     * @param dish
-     * @param container
+     * Adds a specific dish to the screen as a button. When clicked, it navigates to the DishActivity
+     * where users can view detailed information about the dish.
+     *
+     * @param dish The dish to be displayed as a button.
+     * @param container The layout container where the dish button will be added.
      */
     private void addDishButton(Dish dish, LinearLayout container) {
-        //Declare new layout
+        // Declare new layout for the dish button
         LinearLayout dishLayout = new LinearLayout(this);
         dishLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-        //Declare button for new dish
+        // Declare button for the dish
         Button dishInfo = new Button(this);
         dishInfo.setText(dish.getDishName());
         dishInfo.setTextSize(18);
 
-        //Set font
+        // Set custom font
         Typeface customFont = ResourcesCompat.getFont(this, R.font.welcome);
         dishInfo.setTypeface(customFont);
 
-        //When clicked move to DishActivity
+        // When clicked, move to DishActivity to view detailed dish information
         dishInfo.setOnClickListener(v -> {
             Intent intent = new Intent(DessertActivity.this, DishActivity.class);
             intent.putExtra("DishName", dish.getDishName());
@@ -110,16 +123,17 @@ public class DessertActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //Add dish to layout
+        // Add the dish button to the layout
         dishLayout.addView(dishInfo);
         dishLayout.setPadding(0, 0, 0, 100);
         container.addView(dishLayout);
     }
 
     /**
-     * Find a dish based on name
-     * @param name
-     * @return
+     * Finds and returns a dish based on its name.
+     *
+     * @param name The name of the dish to find.
+     * @return The dish matching the given name, or null if no dish is found.
      */
     public static Dish getDishByName(String name) {
         for (Dish dish : dishes) {
