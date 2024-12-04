@@ -6,6 +6,7 @@
  * and clears the activity stack to prevent memory leaks.
  *
  *  * @author Mauricio Villegas
+ *
  *  *  * UTSA CS 3443
  *  *  * NutriChef
  *  *  * Fall 2024

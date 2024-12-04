@@ -4,6 +4,7 @@
  * This is the screen where the user can reference to for navigation help.
  *
  *  * @author Mauricio Villegas
+ *
  *  *  * UTSA CS 3443
  *  *  * NutriChef
  *  *  * Fall 2024

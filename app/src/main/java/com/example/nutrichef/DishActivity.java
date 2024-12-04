@@ -4,6 +4,7 @@
  * Additionally, it handles back navigation to the previous activity and retrieves a corresponding image based on the dish type.
  *
  *  * @author Mauricio Villegas
+ *
  *  *  * UTSA CS 3443
  *  *  * NutriChef
  *  *  * Fall 2024

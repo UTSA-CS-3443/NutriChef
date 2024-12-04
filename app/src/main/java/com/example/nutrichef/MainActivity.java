@@ -5,6 +5,7 @@
  * It also manages a static list of dishes used throughout the app.
  *
  *  * @author Mauricio Villegas
+ *
  *  *  * UTSA CS 3443
  *  *  * NutriChef
  *  *  * Fall 2024
