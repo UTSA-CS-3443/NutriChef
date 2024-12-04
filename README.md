@@ -32,7 +32,8 @@
        * After entering the info, click "Add Dish". A toast will confirm, and the new dish will appear in the corresponding category.
          
 # Issues:
-  * At this current moment we do not have any known issues and our application functions as it should.
+  * Once you have cloned the repository into Android Studio, it is crucial that you go into File->Sync Project With Gradle files
+  * We are Unsure why, or if this is normal, but our project struggles when cloned if this step is not taken
     
     
             
