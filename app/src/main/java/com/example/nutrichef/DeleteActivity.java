@@ -4,6 +4,11 @@
  * then notifies the user with a toast message.
  * Afterward, it redirects the user to the appropriate meal type activity (entree, dessert, or appetizer)
  * and clears the activity stack to prevent memory leaks.
+ *
+ *  * @author Mauricio Villegas
+ *  *  * UTSA CS 3443
+ *  *  * NutriChef
+ *  *  * Fall 2024
  */
 package com.example.nutrichef;
 

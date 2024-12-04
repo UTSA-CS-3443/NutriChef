@@ -3,6 +3,11 @@
  * Based on the selected meal type (entree, appetizer, or dessert), the activity redirects the user to the corresponding
  * activity after saving the new dish.
  * The dish is added to a DishContainer, and a toast message confirms the addition.
+ *
+ * @author Mauricio Villegas
+ *  * UTSA CS 3443
+ *  * NutriChef
+ *  * Fall 2024
  */
 package com.example.nutrichef;
 

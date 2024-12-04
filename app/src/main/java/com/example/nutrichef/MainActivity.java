@@ -3,6 +3,11 @@
  * It loads dish data from CSV files using the DishContainer class and provides buttons for navigating to different activities,
  * such as EntreeActivity and HelperActivity.
  * It also manages a static list of dishes used throughout the app.
+ *
+ *  * @author Mauricio Villegas
+ *  *  * UTSA CS 3443
+ *  *  * NutriChef
+ *  *  * Fall 2024
  */
 package com.example.nutrichef;
 

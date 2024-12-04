@@ -2,6 +2,11 @@
  * The Helper activity consists of a TextView containing Html formatted
  * text that are instructions and a description for the application.
  * This is the screen where the user can reference to for navigation help.
+ *
+ *  * @author Mauricio Villegas
+ *  *  * UTSA CS 3443
+ *  *  * NutriChef
+ *  *  * Fall 2024
  */
 
 package com.example.nutrichef;

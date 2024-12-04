@@ -2,6 +2,11 @@
  * DishActivity displays detailed information about a selected dish, including its name, ingredients, instructions, and nutritional info.
  * It provides options to modify or delete the dish through buttons that navigate to the respective activities.
  * Additionally, it handles back navigation to the previous activity and retrieves a corresponding image based on the dish type.
+ *
+ *  * @author Mauricio Villegas
+ *  *  * UTSA CS 3443
+ *  *  * NutriChef
+ *  *  * Fall 2024
  */
 package com.example.nutrichef;
 
